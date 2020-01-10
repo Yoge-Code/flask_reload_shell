@@ -10,15 +10,15 @@ from flask import Flask
 
 def create_app():
     app = Flask(__name__)
+    app.config.from_object("settings")
 
     @app.route("/", methods=["GET", "POST", "OPTION"])
     def echo():
         result = {
             'headers': str(request.headers),
-            'body': request.get_data(),
-            'query': request.query_string,
+            'body': request.get_data().decode(),
+            'query': request.query_string.decode(),
         }
-        print(dir(request))
         return json.dumps(result)
 
     return app

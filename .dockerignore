@@ -1,0 +1,4 @@
+*.pyc
+venv/
+src/local_settings.py
+

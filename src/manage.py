@@ -4,7 +4,7 @@
 #  Time:  2020/1/10
 
 import os
-from src.app import create_app
+from app import create_app
 from flask_script import Manager, Shell, Server
 
 app = create_app()
