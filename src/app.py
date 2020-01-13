@@ -18,6 +18,7 @@ def create_app():
             'headers': str(request.headers),
             'body': request.get_data().decode(),
             'query': request.query_string.decode(),
+            'client_ip': request.remote_addr,
         }
         return json.dumps(result)
 
