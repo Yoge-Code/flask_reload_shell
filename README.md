@@ -1,5 +1,6 @@
 # autoreload
 
 ```
-python manage.py run
+pip install ipython
+python manage.py shell
 ```

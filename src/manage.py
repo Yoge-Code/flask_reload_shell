@@ -23,6 +23,8 @@ class ReloaderShell(Shell):
         return run_with_reloader(partial(super().run, *args, **kwargs))
 
     def get_context(self):
+        # 监听文件变更重启采用的是多线程的方式
+        # app是LocalProxy对象，不共享
         AppContext(self.app).push()
         return dict(app=app)
 
